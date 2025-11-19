@@ -45,6 +45,7 @@ function MainComponent() {
               </motion.h1>
               {index === 0 && (
                 <motion.h1
+                  initial={{opacity: 0}}
                   whileInView={{ opacity: [0, 1, 0] }}
                   transition={{delay: 1 , duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="bottom-20 absolute tracking-widest text-sm"
