@@ -23,7 +23,7 @@ function MainComponent() {
               key={index}
               className={`h-screen flex justify-center items-center snap-y snap-mandatory 
                 ${index > 3 && "bg-[#f2a0dc]"}
-                ${index > 5 && "bg-black text-white"} `}
+                ${index > 5 && "bg-black/90 text-white"} `}
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -31,6 +31,7 @@ function MainComponent() {
                   ...(index > 2 && { opacity: 1, background: "#f2a0dc" }),
                 }}
                 transition={{ duration: 2, ease: "easeIn" }}
+                viewport={{ once: true }}
                 className="-z-10 absolute h-screen w-full"
               ></motion.div>
               <motion.h1
@@ -45,9 +46,14 @@ function MainComponent() {
               </motion.h1>
               {index === 0 && (
                 <motion.h1
-                  initial={{opacity: 0}}
+                  initial={{ opacity: 0 }}
                   whileInView={{ opacity: [0, 1, 0] }}
-                  transition={{delay: 1 , duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{
+                    delay: 1,
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                   className="bottom-20 absolute tracking-widest text-sm"
                 >
                   Keep scrolling down, nice and slow.
