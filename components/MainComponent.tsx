@@ -23,7 +23,9 @@ function MainComponent() {
               key={index}
               className={`h-screen flex justify-center items-center snap-y snap-mandatory 
                 ${index > 3 && "bg-[#f2a0dc]"}
-                ${index > 5 && "bg-black/90 text-white"} `}
+                ${index > 5 && "bg-black/90 text-white"} 
+                ${index === 6 && "flex-col"}
+                `}
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -54,9 +56,23 @@ function MainComponent() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="bottom-20 absolute tracking-widest text-sm"
+                  className="bottom-20 absolute tracking-widest text-sm "
                 >
                   Keep scrolling down, nice and slow.
+                </motion.h1>
+              )}{" "}
+              {index === 6 && (
+                <motion.h1
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 0.8 }}
+                  transition={{
+                    delay: 1,
+                    duration: 3,
+                    ease: "easeInOut",
+                  }}
+                  className="text-sm tracking-widest text-white relative top-100"
+                >
+                  September 30, 2025
                 </motion.h1>
               )}
             </section>
