@@ -66,7 +66,7 @@ function MainComponent() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 0.8 }}
                   transition={{
-                    delay: 1,
+                    delay: 2.5,
                     duration: 3,
                     ease: "easeInOut",
                   }}
