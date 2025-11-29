@@ -21,7 +21,7 @@ function MainComponent() {
           return (
             <section
               key={index}
-              className={`h-screen flex justify-center items-center snap-y snap-mandatory 
+              className={`h-screen flex justify-center items-center snap-y snap-mandatory font-libre
                 ${index > 3 && "bg-[#f2a0dc]"}
                 ${index > 5 && "bg-black/90 text-white"} 
                 ${index === 6 && "flex-col"}
@@ -40,9 +40,9 @@ function MainComponent() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
+                transition={{ delay: 1, duration: 2.5, ease: "easeInOut" }}
                 viewport={{}}
-                className="text-3xl text-center px-4 snap-center"
+                className="text-3xl text-center px-10 md:px-2 snap-center tracking-tight"
               >
                 {line}
               </motion.h1>
@@ -51,12 +51,12 @@ function MainComponent() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: [0, 1, 0] }}
                   transition={{
-                    delay: 1,
+                    delay: 2.5,
                     duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="bottom-20 absolute tracking-widest text-sm "
+                  className="bottom-20 absolute text-sm"
                 >
                   Keep scrolling down, nice and slow.
                 </motion.h1>
@@ -70,7 +70,7 @@ function MainComponent() {
                     duration: 3,
                     ease: "easeInOut",
                   }}
-                  className="text-sm tracking-widest text-white relative top-100"
+                  className="text-sm tracking-widest text-white relative top-70"
                 >
                   September 30, 2025
                 </motion.h1>
